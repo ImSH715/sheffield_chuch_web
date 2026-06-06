@@ -1,0 +1,36 @@
+<section class="hero-card">
+  <div class="eyebrow">My Profile</div>
+  <h1><%= current_user.email %></h1>
+  <p>Your Bible reading statistics and personal progress.</p>
+</section>
+
+<section class="grid">
+  <div class="card span-4">
+    <h3>Today</h3>
+    <p class="stat-number">5</p>
+    <p>Chapters read today</p>
+  </div>
+
+  <div class="card span-4">
+    <h3>This Week</h3>
+    <p class="stat-number">24</p>
+    <p>Chapters read this week</p>
+  </div>
+
+  <div class="card span-4">
+    <h3>This Month</h3>
+    <p class="stat-number">91</p>
+    <p>Chapters read this month</p>
+  </div>
+
+  <div class="card span-12">
+    <h2>Bible Completion ETA</h2>
+    <p>
+      Based on your current reading speed, estimated completion time will be shown here.
+    </p>
+
+    <div class="progress-bar">
+      <div class="progress-fill" data-progress="28"></div>
+    </div>
+  </div>
+</section>

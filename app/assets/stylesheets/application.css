@@ -1,10 +1,393 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+:root {
+  --bg: #eef7fb;
+  --card: #ffffff;
+  --text: #203040;
+  --muted: #6f8090;
+  --primary: #2878a8;
+  --primary-dark: #155b84;
+  --accent: #d9eef8;
+  --border: #d4e7ef;
+  --success: #2f9e6d;
+  --warning: #d99a24;
+  --shadow: 0 18px 45px rgba(38, 104, 142, 0.16);
+  --radius: 22px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(75, 166, 215, 0.22), transparent 30%),
+    linear-gradient(135deg, #f5fbff, var(--bg));
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  min-height: 100vh;
+}
+
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.78);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 6vw;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.brand-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--primary), #7ec4df);
+  display: grid;
+  place-items: center;
+  color: white;
+  box-shadow: var(--shadow);
+}
+
+.brand span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-links a,
+.logout-btn {
+  border: none;
+  background: transparent;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 9px 12px;
+  border-radius: 999px;
+  transition: 0.2s ease;
+}
+
+.nav-links a:hover,
+.logout-btn:hover {
+  background: var(--accent);
+  transform: translateY(-1px);
+}
+
+.admin-link {
+  color: var(--primary-dark) !important;
+  font-weight: 700;
+}
+
+.page-shell {
+  padding: 34px 6vw 80px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 26px;
+  align-items: stretch;
+  animation: fadeUp 0.6s ease both;
+}
+
+.hero-card {
+  background: linear-gradient(135deg, #ffffff, #e8f6fc);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-card::after {
+  content: "";
+  position: absolute;
+  right: -70px;
+  bottom: -70px;
+  width: 220px;
+  height: 220px;
+  border-radius: 999px;
+  background: rgba(40, 120, 168, 0.12);
+}
+
+.eyebrow {
+  color: var(--primary);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 4.2rem);
+  line-height: 1.02;
+  margin: 14px 0;
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.cta-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: 0.22s ease;
+  font-weight: 700;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 12px 28px rgba(40, 120, 168, 0.25);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--primary-dark);
+  border: 1px solid var(--border);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  transform: translateY(-3px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 22px;
+  margin-top: 26px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  animation: fadeUp 0.7s ease both;
+}
+
+.card.span-4 {
+  grid-column: span 4;
+}
+
+.card.span-6 {
+  grid-column: span 6;
+}
+
+.card.span-8 {
+  grid-column: span 8;
+}
+
+.card.span-12 {
+  grid-column: span 12;
+}
+
+.card h2,
+.card h3 {
+  margin-top: 0;
+}
+
+.notice-feature {
+  border-left: 5px solid var(--primary);
+}
+
+.notice-list {
+  display: grid;
+  gap: 12px;
+}
+
+.notice-item {
+  padding: 14px;
+  background: #f6fbfe;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  transition: 0.2s ease;
+}
+
+.notice-item:hover {
+  transform: translateX(4px);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 13px;
+  border-radius: 999px;
+  background: #d9e9f1;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), #78c6df);
+  width: var(--progress, 45%);
+  animation: growBar 1s ease both;
+}
+
+.stat-number {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--primary-dark);
+}
+
+.bible-reader {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 22px;
+}
+
+.sidebar {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  height: fit-content;
+}
+
+.sidebar button,
+.select-like {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  background: #f7fbfd;
+  border-radius: 14px;
+  margin-bottom: 10px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.verse-box {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: var(--shadow);
+  line-height: 1.9;
+  font-size: 1.08rem;
+}
+
+.verse {
+  padding: 10px 0;
+  border-bottom: 1px solid #eef4f7;
+}
+
+.verse-number {
+  color: var(--primary);
+  font-weight: 800;
+  margin-right: 8px;
+}
+
+.flash {
+  padding: 14px 18px;
+  border-radius: 16px;
+  margin-bottom: 18px;
+}
+
+.flash.success {
+  background: #e2f6ed;
+  color: #146b45;
+}
+
+.flash.alert {
+  background: #fdecec;
+  color: #9f2d2d;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes growBar {
+  from {
+    width: 0%;
+  }
+}
+
+@media (max-width: 900px) {
+  .top-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .nav-links {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .hero,
+  .bible-reader {
+    grid-template-columns: 1fr;
+  }
+
+  .card.span-4,
+  .card.span-6,
+  .card.span-8,
+  .card.span-12 {
+    grid-column: span 12;
+  }
+  
+.is-visible {
+  animation: fadeUp 0.7s ease both;
+}
+
+.completed-pulse {
+  animation: pulseDone 0.5s ease both;
+  background: var(--success) !important;
+}
+
+@keyframes pulseDone {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+}

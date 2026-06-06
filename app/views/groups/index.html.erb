@@ -1,0 +1,40 @@
+<section class="hero-card">
+  <div class="eyebrow">Group Dashboard</div>
+  <h1>Your small group space.</h1>
+  <p>
+    View group announcements, prayer requests, and shared tasks.
+    Users can only view their own group unless they are admin or manager.
+  </p>
+</section>
+
+<section class="grid">
+  <div class="card span-6">
+    <h2>Group Notice</h2>
+    <p>Announcement written by admin or group manager.</p>
+  </div>
+
+  <div class="card span-6">
+    <h2>Manager Notice</h2>
+    <p>Private notice area for group leaders.</p>
+  </div>
+
+  <div class="card span-12">
+    <h2>Prayer Requests</h2>
+
+    <div class="notice-list">
+      <div class="notice-item">
+        <strong>Prayer for this week</strong>
+        <p>Please pray for health, family, and spiritual discipline.</p>
+      </div>
+
+      <div class="notice-item">
+        <strong>Shared by group leader</strong>
+        <p>A manager can write on behalf of a group member.</p>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <%= link_to "Add Prayer Request", prayer_requests_path, class: "btn-primary" %>
+    </div>
+  </div>
+</section>

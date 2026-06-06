@@ -1,7 +1,25 @@
 Rails.application.routes.draw do
+  get "profile/index"
+  get "tasks/index"
+  get "groups/index"
+  get "bible/index"
+  get "dashboard/index"
   devise_for :users
-  root "home#index"
-  get "home/index"
+  root "dashboard#index"
+  get "dashboard", to: "dashboard#index"
+  get "bible", to: "bible#index"
+  get "groups", to: "groups#index"
+  get "tasks", to: "tasks#index"
+  get "profile", to: "profile#show"
+
+  resources :notices
+  resources :prayer_requests
+  resources :tasks do
+    member do
+      patch :complete
+    end
+  end
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

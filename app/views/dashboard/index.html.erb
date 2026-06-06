@@ -1,0 +1,68 @@
+<section class="hero">
+  <div class="hero-card">
+    <div class="eyebrow">Welcome back</div>
+    <h1>Read, pray, and grow together.</h1>
+    <p>
+      Your church dashboard brings Bible reading, group prayer requests,
+      assigned tasks, and announcements into one shared space.
+    </p>
+
+    <div class="cta-row">
+      <%= link_to "Open Bible", bible_path, class: "btn-primary" %>
+      <%= link_to "View Group", groups_path, class: "btn-secondary" %>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Today’s Reading</h3>
+    <p class="stat-number">John 1</p>
+    <p>Continue your current Bible reading plan.</p>
+
+    <div class="progress-bar">
+      <div class="progress-fill" data-progress="42"></div>
+    </div>
+
+    <div class="cta-row">
+      <%= link_to "Continue", bible_path, class: "btn-primary" %>
+    </div>
+  </div>
+</section>
+
+<section class="grid">
+  <div class="card span-8 notice-feature">
+    <div class="eyebrow">Latest Notice</div>
+    <h2>Sunday Service and Bible Reading Challenge</h2>
+    <p>
+      This is the main highlighted announcement. Later this will come from the
+      Notice model and only the latest admin notice will be expanded here.
+    </p>
+    <%= link_to "Read more", notices_path, class: "btn-secondary" %>
+  </div>
+
+  <div class="card span-4">
+    <h3>My Task Progress</h3>
+    <p class="stat-number">68%</p>
+    <p>Completed tasks this month.</p>
+    <div class="progress-bar">
+      <div class="progress-fill" data-progress="68"></div>
+    </div>
+  </div>
+
+  <div class="card span-4">
+    <h3>Group</h3>
+    <p>Your current group dashboard and prayer board.</p>
+    <%= link_to "Open Group", groups_path, class: "btn-secondary" %>
+  </div>
+
+  <div class="card span-4">
+    <h3>Prayer Requests</h3>
+    <p>Share your prayer topic with your group.</p>
+    <%= link_to "Write Prayer", prayer_requests_path, class: "btn-secondary" %>
+  </div>
+
+  <div class="card span-4">
+    <h3>Bible Statistics</h3>
+    <p>Track daily, weekly, and monthly Bible reading activity.</p>
+    <%= link_to "View Profile", profile_path, class: "btn-secondary" %>
+  </div>
+</section>
