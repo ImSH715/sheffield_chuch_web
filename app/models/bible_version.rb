@@ -1,0 +1,2 @@
+class BibleVersion < ApplicationRecord
+end

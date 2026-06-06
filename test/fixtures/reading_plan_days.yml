@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reading_plan: one
+  day_number: 1
+  reference_text: MyString
+
+two:
+  reading_plan: two
+  day_number: 1
+  reference_text: MyString

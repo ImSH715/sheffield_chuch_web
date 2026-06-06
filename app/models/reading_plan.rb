@@ -1,0 +1,2 @@
+class ReadingPlan < ApplicationRecord
+end
