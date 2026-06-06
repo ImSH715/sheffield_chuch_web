@@ -366,8 +366,8 @@ body {
   .card.span-8,
   .card.span-12 {
     grid-column: span 12;
-  }
-  
+  } 
+}
 .is-visible {
   animation: fadeUp 0.7s ease both;
 }
@@ -618,5 +618,4 @@ body {
   .auth-intro h2 {
     font-size: 1.65rem;
   }
-}
 }

@@ -23,5 +23,7 @@ module ChurchApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+  
+    config.il8n.default_locale = :ko
   end
 end

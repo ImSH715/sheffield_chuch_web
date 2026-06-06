@@ -18,4 +18,12 @@ Rails.application.routes.draw do
   end
 
   get "up" => "rails/health#show", as: :rails_health_check
+
+  namespace :admin do
+    root "dashboard#index"
+
+    resources :tasks
+    resources :users
+    resources :groups
+  end
 end
